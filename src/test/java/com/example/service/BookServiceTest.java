@@ -2,6 +2,8 @@ package com.example.service;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,7 @@ import com.example.model.ISBN;
  * @version 1.0
  */
 @RunWith(SpringRunner.class)
-@ContextConfiguration("classpath*:/spring-cache.xml")
+@ContextConfiguration("classpath*:spring-cache.xml")
 public class BookServiceTest {
 
     @Autowired
@@ -34,8 +36,12 @@ public class BookServiceTest {
         bookService.saveBook(book);
         book.setName("yyy");
         bookService.saveBook(book);
-        Book book1 = bookService.getBook(isbn);
-        assertEquals("xxx", book1.getName());
+        Book book1 = bookService.getBook(new ISBN("123456"));
+        assertEquals("yyy", book1.getName());
+
+        bookService.saveBook(new Book(new ISBN("123"), "zzz"));
+        List<Book> books = bookService.getBooks("books");
+        assertEquals(2, books.size());
     }
 
     /**

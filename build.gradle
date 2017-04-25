@@ -28,6 +28,8 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context-support', version: '4.3.8.RELEASE'
     // https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine
     compile group: 'com.github.ben-manes.caffeine', name: 'caffeine', version: '2.4.0'
+    // https://mvnrepository.com/artifact/net.sf.ehcache/ehcache
+    compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.4'
     
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
