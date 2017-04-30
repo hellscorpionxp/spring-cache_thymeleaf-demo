@@ -19,7 +19,8 @@ import com.example.model.ISBN;
  * @version 1.0
  */
 @RunWith(SpringRunner.class)
-@ContextConfiguration("classpath*:spring-cache.xml")
+@ContextConfiguration({ "file:src/main/webapp/WEB-INF/applicationContext.xml",
+    "file:src/main/webapp/WEB-INF/applicationContext-cache.xml" })
 public class BookServiceTest {
 
     @Autowired
