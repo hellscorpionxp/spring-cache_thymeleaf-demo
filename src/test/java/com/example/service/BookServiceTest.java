@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.example.model.Book;
 import com.example.model.ISBN;
@@ -19,8 +20,10 @@ import com.example.model.ISBN;
  * @version 1.0
  */
 @RunWith(SpringRunner.class)
+@WebAppConfiguration
 @ContextConfiguration({ "file:src/main/webapp/WEB-INF/applicationContext.xml",
-    "file:src/main/webapp/WEB-INF/applicationContext-cache.xml" })
+    "file:src/main/webapp/WEB-INF/applicationContext-cache.xml",
+    "file:src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml" })
 public class BookServiceTest {
 
     @Autowired
